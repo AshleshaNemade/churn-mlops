@@ -8,8 +8,7 @@ from preprocessing import preprocess
 from models import get_models
 from evaluate import evaluate_model
 
-df = pd.read_csv("data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv")
-df = preprocess(df)
+df = pd.read_csv("data/processed/train.csv")
 
 X = df.drop("Churn", axis=1)
 y = df["Churn"]

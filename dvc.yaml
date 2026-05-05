@@ -6,6 +6,8 @@ stages:
     - src/preprocessing.py
     outs:
     - data/processed/train.csv
+    - models/scaler.pkl
+    - models/numerical_cols.pkl
   tune:
     cmd: python src/tune.py
     deps:

@@ -9,13 +9,21 @@ stages:
       size: 977501
     - path: src/preprocessing.py
       hash: md5
-      md5: 55caa9039c4063d30a3b90e7f06d0942
-      size: 1015
+      md5: a10f9c4e0d36efd1429ec6906d88e96a
+      size: 1113
     outs:
     - path: data/processed/train.csv
       hash: md5
       md5: 9d96315ca3d62b03f28d71ac6d510335
       size: 575950182
+    - path: models/numerical_cols.pkl
+      hash: md5
+      md5: edf48e7d4419d61f57764f320c74e7aa
+      size: 58
+    - path: models/scaler.pkl
+      hash: md5
+      md5: 933a833a3dbf0b61bd67a9a1966a0533
+      size: 959
   tune:
     cmd: python src/tune.py
     deps:

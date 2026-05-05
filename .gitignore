@@ -3,6 +3,5 @@ __pycache__/
 venv/
 data/*
 !data/raw/
-models/
 mlruns/
 .env

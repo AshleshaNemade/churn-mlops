@@ -3,7 +3,7 @@ stages:
     cmd: python src/preprocessing.py
     deps:
     - data/raw/TelcoCustomer_Churn.csv
-    - src/preprocess.py
+    - src/preprocessing.py
     outs:
     - data/processed/train.csv
   train:

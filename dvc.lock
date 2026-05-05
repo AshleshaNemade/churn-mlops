@@ -1,0 +1,38 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/raw/TelcoCustomer_Churn.csv
+      hash: md5
+      md5: 0f9de68e012bd3aed5fa7cdc9fc421af
+      size: 977501
+    - path: src/preprocessing.py
+      hash: md5
+      md5: 55caa9039c4063d30a3b90e7f06d0942
+      size: 1015
+    outs:
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 9d96315ca3d62b03f28d71ac6d510335
+      size: 575950182
+  tune:
+    cmd: python src/tune.py
+    deps:
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 9d96315ca3d62b03f28d71ac6d510335
+      size: 575950182
+    - path: src/tune.py
+      hash: md5
+      md5: 89528e94d1ccd64a69a9141c7491f90a
+      size: 2991
+    outs:
+    - path: models/best_model.pkl
+      hash: md5
+      md5: 42ec04aa28f4480ed7fbdb5aac8c9324
+      size: 423551
+    - path: models/features.pkl
+      hash: md5
+      md5: 467b0303c69356f625bf45ec786b4037
+      size: 313511

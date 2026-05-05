@@ -6,12 +6,11 @@ stages:
     - src/preprocessing.py
     outs:
     - data/processed/train.csv
-  train:
-    cmd: python src/train.py
+  tune:
+    cmd: python src/tune.py
     deps:
     - data/processed/train.csv
-    - src/evaluate.py
-    - src/models.py
-    - src/train.py
+    - src/tune.py
     outs:
     - models/best_model.pkl
+    - models/features.pkl
